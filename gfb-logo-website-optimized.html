@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GFB Logo — Website Optimized</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0a0a0f;
+    --bg-card:   #0f0f18;
+    --cyan:      #00d4ff;
+    --cyan-glow: rgba(0, 212, 255, 0.15);
+    --cyan-dim:  rgba(0, 212, 255, 0.06);
+    --white:     #f0f6ff;
+    --slate:     #6a7fa8;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    padding: 60px 48px;
+  }
+
+  .label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 48px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* ── PREVIEW PANELS ── */
+  .panels {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 720px;
+  }
+
+  .panel {
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .panel-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  .panel-dark  { background: var(--bg); }
+  .panel-card  { background: var(--bg-card); }
+  .panel-nav   { background: rgba(10,10,15,0.85); backdrop-filter: blur(12px); }
+
+  /* ── LOGO SIZES ── */
+  .logo-xl  svg { height: 64px; }
+  .logo-lg  svg { height: 48px; }
+  .logo-md  svg { height: 36px; }
+  .logo-sm  svg { height: 24px; }
+
+  .size-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 8px;
+  }
+  .size-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .size-tag {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--slate);
+    width: 36px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<p class="label">GFB Advanced Technologies — Logo System · Website Optimized</p>
+
+<div class="panels">
+
+  <!-- PRIMARY: on site background -->
+  <div class="panel panel-dark">
+    <span class="panel-label">Primary — on site background #0a0a0f</span>
+    <div class="logo-xl">
+      <!-- LOGO SVG: PRIMARY -->
+      <svg viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:64px;width:auto;">
+        <defs>
+          <radialGradient id="hexGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00d4ff" stop-opacity="1"/>
+            <stop offset="60%" stop-color="#00d4ff" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#0088bb" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="softGlow">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
+
+        <!-- ambient glow behind hex -->
+        <ellipse cx="32" cy="32" rx="26" ry="26" fill="url(#hexGlow)"/>
+
+        <!-- outer hex frame — very subtle -->
+        <polygon points="32,6 55,19 55,45 32,58 9,45 9,19"
+          stroke="#00d4ff" stroke-width="0.5" fill="none" opacity="0.18"/>
+
+        <!-- inner hex — main icon body -->
+        <polygon points="32,14 50,24.5 50,39.5 32,50 14,39.5 14,24.5"
+          fill="#0a0a0f" stroke="#00d4ff" stroke-width="1" opacity="0.9"/>
+
+        <!-- node connection lines -->
+        <line x1="32" y1="14" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+        <line x1="50" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.35"/>
+        <line x1="14" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.35"/>
+        <line x1="50" y1="39.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.25"/>
+        <line x1="14" y1="39.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.25"/>
+        <line x1="32" y1="50" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.3"/>
+
+        <!-- vertex nodes -->
+        <circle cx="32" cy="14"   r="1.6" fill="#00d4ff" opacity="0.9"/>
+        <circle cx="50" cy="24.5" r="1.6" fill="#00d4ff" opacity="0.6"/>
+        <circle cx="50" cy="39.5" r="1.6" fill="#00d4ff" opacity="0.6"/>
+        <circle cx="32" cy="50"   r="1.6" fill="#00d4ff" opacity="0.6"/>
+        <circle cx="14" cy="39.5" r="1.6" fill="#00d4ff" opacity="0.6"/>
+        <circle cx="14" cy="24.5" r="1.6" fill="#00d4ff" opacity="0.6"/>
+
+        <!-- center core glow -->
+        <circle cx="32" cy="32" r="5" fill="url(#coreGlow)" filter="url(#softGlow)"/>
+        <circle cx="32" cy="32" r="2.2" fill="#00d4ff"/>
+        <circle cx="32" cy="32" r="1" fill="#e0f9ff"/>
+
+        <!-- divider -->
+        <line x1="78" y1="13" x2="78" y2="51" stroke="#00d4ff" stroke-width="0.6" opacity="0.2"/>
+
+        <!-- wordmark -->
+        <text x="93" y="40"
+          font-family="Syne, sans-serif"
+          font-weight="800"
+          font-size="26"
+          letter-spacing="3"
+          fill="#f0f6ff">GFB</text>
+        <text x="94" y="54"
+          font-family="DM Sans, sans-serif"
+          font-weight="300"
+          font-size="7.5"
+          letter-spacing="3.5"
+          fill="#6a7fa8">ADVANCED TECHNOLOGIES</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- NAVBAR: slightly elevated bg + smaller size -->
+  <div class="panel panel-nav">
+    <span class="panel-label">Sticky Nav — glassmorphism bg</span>
+    <div class="logo-md">
+      <svg viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:36px;width:auto;">
+        <defs>
+          <radialGradient id="hexGlow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="coreGlow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00d4ff" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#0088bb" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="32" cy="32" rx="26" ry="26" fill="url(#hexGlow2)"/>
+        <polygon points="32,6 55,19 55,45 32,58 9,45 9,19"
+          stroke="#00d4ff" stroke-width="0.5" fill="none" opacity="0.15"/>
+        <polygon points="32,14 50,24.5 50,39.5 32,50 14,39.5 14,24.5"
+          fill="rgba(10,10,15,0.6)" stroke="#00d4ff" stroke-width="1" opacity="0.85"/>
+        <line x1="32" y1="14" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+        <line x1="50" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.3"/>
+        <line x1="14" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.3"/>
+        <circle cx="32" cy="14"   r="1.6" fill="#00d4ff" opacity="0.9"/>
+        <circle cx="50" cy="24.5" r="1.4" fill="#00d4ff" opacity="0.5"/>
+        <circle cx="14" cy="24.5" r="1.4" fill="#00d4ff" opacity="0.5"/>
+        <circle cx="32" cy="32" r="4" fill="url(#coreGlow2)"/>
+        <circle cx="32" cy="32" r="2" fill="#00d4ff"/>
+        <line x1="78" y1="13" x2="78" y2="51" stroke="#00d4ff" stroke-width="0.6" opacity="0.15"/>
+        <text x="93" y="40" font-family="Syne, sans-serif" font-weight="800" font-size="26" letter-spacing="3" fill="#f0f6ff">GFB</text>
+        <text x="94" y="54" font-family="DM Sans, sans-serif" font-weight="300" font-size="7.5" letter-spacing="3.5" fill="#6a7fa8">ADVANCED TECHNOLOGIES</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SIZE SCALE -->
+  <div class="panel panel-card">
+    <span class="panel-label">Scale — hero / section / nav / favicon</span>
+    <div class="size-row">
+
+      <div class="size-item">
+        <span class="size-tag">XL</span>
+        <svg viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:56px;width:auto;">
+          <defs>
+            <radialGradient id="hg3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.22"/><stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="cg3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="1"/><stop offset="100%" stop-color="#0088bb" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="32" cy="32" rx="26" ry="26" fill="url(#hg3)"/>
+          <polygon points="32,6 55,19 55,45 32,58 9,45 9,19" stroke="#00d4ff" stroke-width="0.5" fill="none" opacity="0.18"/>
+          <polygon points="32,14 50,24.5 50,39.5 32,50 14,39.5 14,24.5" fill="#0a0a0f" stroke="#00d4ff" stroke-width="1" opacity="0.9"/>
+          <line x1="32" y1="14" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+          <line x1="50" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.35"/>
+          <line x1="14" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.35"/>
+          <circle cx="32" cy="14" r="1.6" fill="#00d4ff" opacity="0.9"/>
+          <circle cx="50" cy="24.5" r="1.4" fill="#00d4ff" opacity="0.6"/>
+          <circle cx="14" cy="24.5" r="1.4" fill="#00d4ff" opacity="0.6"/>
+          <circle cx="32" cy="32" r="4.5" fill="url(#cg3)"/>
+          <circle cx="32" cy="32" r="2" fill="#00d4ff"/>
+          <circle cx="32" cy="32" r="0.9" fill="#e0f9ff"/>
+          <line x1="78" y1="13" x2="78" y2="51" stroke="#00d4ff" stroke-width="0.6" opacity="0.2"/>
+          <text x="93" y="40" font-family="Syne,sans-serif" font-weight="800" font-size="26" letter-spacing="3" fill="#f0f6ff">GFB</text>
+          <text x="94" y="54" font-family="DM Sans,sans-serif" font-weight="300" font-size="7.5" letter-spacing="3.5" fill="#6a7fa8">ADVANCED TECHNOLOGIES</text>
+        </svg>
+      </div>
+
+      <div class="size-item">
+        <span class="size-tag">LG</span>
+        <svg viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:40px;width:auto;">
+          <defs>
+            <radialGradient id="hg4" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.2"/><stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="cg4" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="1"/><stop offset="100%" stop-color="#0088bb" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="32" cy="32" rx="26" ry="26" fill="url(#hg4)"/>
+          <polygon points="32,6 55,19 55,45 32,58 9,45 9,19" stroke="#00d4ff" stroke-width="0.5" fill="none" opacity="0.15"/>
+          <polygon points="32,14 50,24.5 50,39.5 32,50 14,39.5 14,24.5" fill="#0a0a0f" stroke="#00d4ff" stroke-width="1" opacity="0.9"/>
+          <line x1="32" y1="14" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+          <line x1="50" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.3"/>
+          <line x1="14" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.7" opacity="0.3"/>
+          <circle cx="32" cy="14" r="1.6" fill="#00d4ff" opacity="0.9"/>
+          <circle cx="50" cy="24.5" r="1.4" fill="#00d4ff" opacity="0.55"/>
+          <circle cx="14" cy="24.5" r="1.4" fill="#00d4ff" opacity="0.55"/>
+          <circle cx="32" cy="32" r="4" fill="url(#cg4)"/>
+          <circle cx="32" cy="32" r="2" fill="#00d4ff"/>
+          <line x1="78" y1="13" x2="78" y2="51" stroke="#00d4ff" stroke-width="0.6" opacity="0.18"/>
+          <text x="93" y="40" font-family="Syne,sans-serif" font-weight="800" font-size="26" letter-spacing="3" fill="#f0f6ff">GFB</text>
+          <text x="94" y="54" font-family="DM Sans,sans-serif" font-weight="300" font-size="7.5" letter-spacing="3.5" fill="#6a7fa8">ADVANCED TECHNOLOGIES</text>
+        </svg>
+      </div>
+
+      <div class="size-item">
+        <span class="size-tag">MD</span>
+        <svg viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:28px;width:auto;">
+          <defs>
+            <radialGradient id="hg5" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.18"/><stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="cg5" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="1"/><stop offset="100%" stop-color="#0088bb" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="32" cy="32" rx="26" ry="26" fill="url(#hg5)"/>
+          <polygon points="32,14 50,24.5 50,39.5 32,50 14,39.5 14,24.5" fill="#0a0a0f" stroke="#00d4ff" stroke-width="1.2" opacity="0.9"/>
+          <line x1="32" y1="14" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+          <line x1="50" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+          <line x1="14" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+          <circle cx="32" cy="14" r="1.8" fill="#00d4ff"/>
+          <circle cx="32" cy="32" r="3.5" fill="url(#cg5)"/>
+          <circle cx="32" cy="32" r="2" fill="#00d4ff"/>
+          <line x1="78" y1="13" x2="78" y2="51" stroke="#00d4ff" stroke-width="0.6" opacity="0.15"/>
+          <text x="93" y="40" font-family="Syne,sans-serif" font-weight="800" font-size="26" letter-spacing="3" fill="#f0f6ff">GFB</text>
+          <text x="94" y="54" font-family="DM Sans,sans-serif" font-weight="300" font-size="7.5" letter-spacing="3.5" fill="#6a7fa8">ADVANCED TECHNOLOGIES</text>
+        </svg>
+      </div>
+
+      <!-- Icon only — for favicon/tab -->
+      <div class="size-item">
+        <span class="size-tag">ICO</span>
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:28px;width:28px;">
+          <defs>
+            <radialGradient id="hg6" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.25"/><stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="cg6" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="1"/><stop offset="100%" stop-color="#0088bb" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="32" cy="32" rx="28" ry="28" fill="url(#hg6)"/>
+          <polygon points="32,6 55,19 55,45 32,58 9,45 9,19" stroke="#00d4ff" stroke-width="0.6" fill="none" opacity="0.2"/>
+          <polygon points="32,14 50,24.5 50,39.5 32,50 14,39.5 14,24.5" fill="#0a0a0f" stroke="#00d4ff" stroke-width="1.2"/>
+          <line x1="32" y1="14" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.55"/>
+          <line x1="50" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.35"/>
+          <line x1="14" y1="24.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.35"/>
+          <line x1="50" y1="39.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.2"/>
+          <line x1="14" y1="39.5" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.2"/>
+          <line x1="32" y1="50" x2="32" y2="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.25"/>
+          <circle cx="32" cy="14"   r="2" fill="#00d4ff"/>
+          <circle cx="50" cy="24.5" r="1.6" fill="#00d4ff" opacity="0.65"/>
+          <circle cx="50" cy="39.5" r="1.6" fill="#00d4ff" opacity="0.65"/>
+          <circle cx="32" cy="50"   r="1.6" fill="#00d4ff" opacity="0.65"/>
+          <circle cx="14" cy="39.5" r="1.6" fill="#00d4ff" opacity="0.65"/>
+          <circle cx="14" cy="24.5" r="1.6" fill="#00d4ff" opacity="0.65"/>
+          <circle cx="32" cy="32" r="5.5" fill="url(#cg6)"/>
+          <circle cx="32" cy="32" r="2.5" fill="#00d4ff"/>
+          <circle cx="32" cy="32" r="1" fill="#e0f9ff"/>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

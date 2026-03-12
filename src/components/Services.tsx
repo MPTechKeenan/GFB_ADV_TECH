@@ -90,16 +90,45 @@ const cardVariants: Variants = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="services" className="relative overflow-hidden py-24 sm:py-32">
+      {/* Hexagonal tiling background — #00d4ff stroke, 6% opacity, no fill */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.06]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="hex-services"
+              width="56"
+              height="100"
+              patternUnits="userSpaceOnUse"
+              patternTransform="scale(2)"
+            >
+              <path
+                d="M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100"
+                fill="none"
+                stroke="#00d4ff"
+                strokeWidth="0.5"
+              />
+              <path
+                d="M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34"
+                fill="none"
+                stroke="#00d4ff"
+                strokeWidth="0.5"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hex-services)" />
+        </svg>
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="font-heading text-4xl font-semibold tracking-[0.02em] text-white sm:text-5xl">
             What We Do
           </h2>
           <p className="mt-4 text-zinc-400 sm:text-lg">
@@ -119,12 +148,18 @@ export default function Services() {
             <motion.div
               key={service.title}
               variants={cardVariants}
-              className="group rounded-2xl border border-white/[0.06] bg-surface/60 p-8 backdrop-blur-sm transition-colors duration-300 hover:border-accent/30"
+              className="group rounded-lg border border-white/[0.06] bg-surface/60 p-8 backdrop-blur-sm transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_20px_rgba(0,212,255,0.12)]"
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
+              <div
+                className="mb-5 flex h-12 w-12 items-center justify-center bg-accent/10 text-accent"
+                style={{
+                  clipPath:
+                    "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                }}
+              >
                 {service.icon}
               </div>
-              <h3 className="font-display text-xl font-semibold text-white">
+              <h3 className="font-heading text-xl font-semibold text-white">
                 {service.title}
               </h3>
               <p className="mt-2 leading-relaxed text-zinc-400">

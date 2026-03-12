@@ -48,9 +48,13 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Radial cyan glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-accent/[0.07] blur-[120px]" />
+      {/* Radial cyan glow — 800px diameter, 4% opacity, centered */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full blur-[120px]"
+        style={{ backgroundColor: "rgba(0, 212, 255, 0.04)" }}
+      />
 
+      {/* Above the fold: use animate (not whileInView) so content triggers on mount */}
       <motion.div
         variants={container}
         initial="hidden"
@@ -62,7 +66,8 @@ export default function Hero() {
         </motion.div>
         <motion.h1
           variants={fadeUp}
-          className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          className="font-hero font-normal leading-tight tracking-tight text-white"
+          style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
         >
           Enterprise-Grade Data Solutions.
           <br />

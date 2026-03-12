@@ -19,6 +19,8 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-syne)", "sans-serif"],
         body: ["var(--font-dm-sans)", "sans-serif"],
+        hero: ["var(--font-bebas-neue)", "sans-serif"],
+        heading: ["var(--font-dm-sans)", "sans-serif"],
       },
     },
   },

@@ -17,10 +17,10 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+            <h2 className="font-heading text-4xl font-semibold tracking-[0.02em] text-white sm:text-5xl">
               Built on Real-World
               <br />
               Enterprise Experience
@@ -51,7 +51,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1"
           >
@@ -60,7 +60,7 @@ export default function About() {
                 key={stat.label}
                 className="rounded-2xl border border-white/[0.06] bg-surface/60 p-8 text-center lg:text-left"
               >
-                <span className="font-display text-4xl font-bold text-accent sm:text-5xl">
+                <span className="font-heading text-4xl font-bold text-accent sm:text-5xl">
                   {stat.value}
                 </span>
                 <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>

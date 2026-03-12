@@ -49,7 +49,7 @@ export default function Navbar() {
           className="flex items-center gap-0"
           aria-label="GFB Advanced Technologies — Home"
         >
-          <GFBLogo size="md" className="h-9 w-auto" />
+          <GFBLogo size="md" light className="h-10 w-auto" />
         </a>
 
         {/* Desktop links */}

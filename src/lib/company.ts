@@ -6,7 +6,7 @@ export const company = {
   legalName: "GFB Federal Solutions",
   shortName: "GFB Federal Solutions",
   tagline: "Federal Technology | Data | Architecture | AI",
-  email: "info@gfbfederalsolutions.com",
+  email: "info@gfbfed.com",
   positioning:
     "Enterprise data architecture, data engineering, governance, data quality, analytics, and AI solutions for complex federal and defense data environments.",
   contracting: {

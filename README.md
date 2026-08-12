@@ -30,7 +30,7 @@ Edit capability content in:
 Set production URL in `.env.local`:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://gfbfederalsolutions.com
+NEXT_PUBLIC_SITE_URL=https://gfbfed.com
 ```
 
 ## Development

@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://gfbfederalsolutions.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://gfbfed.com";
 
 export const metadata: Metadata = {
   title: `${company.shortName} | Federal Data, Architecture & AI Solutions`,

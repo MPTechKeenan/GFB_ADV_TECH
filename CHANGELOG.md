@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-12 — Production domain and contact email
+
+- Set production site URL to `https://gfbfed.com`.
+- Updated contact email to `info@gfbfed.com`.
+
 ## 2026-03-12 — Rebrand to GFB Federal Solutions
 
 - Rebranded from GFB Advanced Technologies to **GFB Federal Solutions**.

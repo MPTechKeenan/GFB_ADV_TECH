@@ -1,128 +1,104 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import GFBLogo from "./GFBLogo";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "#hero" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Capabilities", href: "/capabilities" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState("hero");
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  const handleClick = (href: string) => {
-    setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-white/5">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault();
-            handleClick("#hero");
-          }}
-          className="flex items-center gap-0"
-          aria-label="GFB Advanced Technologies — Home"
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label="GFB Federal Solutions — Home"
+          onClick={() => setMobileOpen(false)}
         >
-          <GFBLogo size="md" light className="h-10 w-auto" />
-        </a>
+          <GFBLogo size="md" light className="w-auto" />
+        </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick(item.href);
-                }}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  activeSection === item.href.slice(1)
-                    ? "text-accent"
-                    : "text-zinc-400 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <nav className="hidden md:block" aria-label="Main navigation">
+          <ul className="flex items-center gap-8">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`text-sm font-medium transition-colors ${
+                    isActive(item.href)
+                      ? "text-accent-light"
+                      : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-        {/* Mobile hamburger */}
         <button
+          type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="flex flex-col gap-1.5 p-2 md:hidden"
           aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
         >
           <span
-            className={`block h-0.5 w-5 bg-white transition-transform duration-200 ${
+            className={`block h-0.5 w-5 bg-foreground transition-transform ${
               mobileOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-5 bg-white transition-opacity duration-200 ${
+            className={`block h-0.5 w-5 bg-foreground transition-opacity ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-5 bg-white transition-transform duration-200 ${
+            className={`block h-0.5 w-5 bg-foreground transition-transform ${
               mobileOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-white/5 bg-background/95 backdrop-blur-md">
+        <nav
+          className="border-t border-border/60 bg-background md:hidden"
+          aria-label="Mobile navigation"
+        >
           <ul className="flex flex-col items-center gap-6 py-6">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleClick(item.href);
-                  }}
-                  className={`text-base font-medium transition-colors duration-200 ${
-                    activeSection === item.href.slice(1)
-                      ? "text-accent"
-                      : "text-zinc-400 hover:text-white"
+                  onClick={() => setMobileOpen(false)}
+                  className={`text-base font-medium ${
+                    isActive(item.href)
+                      ? "text-accent-light"
+                      : "text-muted hover:text-foreground"
                   }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
       )}
-    </nav>
+    </header>
   );
 }

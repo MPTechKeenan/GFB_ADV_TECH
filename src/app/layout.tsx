@@ -1,48 +1,45 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, Bebas_Neue } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-syne",
-  display: "swap",
-});
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { company } from "@/lib/company";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-dm-sans",
   display: "swap",
 });
 
-const bebasNeue = Bebas_Neue({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-bebas-neue",
-  display: "swap",
-});
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gfbadvanced.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://gfbfederalsolutions.com";
 
 export const metadata: Metadata = {
-  title: "GFB Advanced Technologies | Data Architecture & IT Consulting",
-  description:
-    "Enterprise-grade data solutions built for small businesses. GFB Advanced Technologies provides business automation, web development, data analytics, and IT support in Jacksonville, FL.",
+  title: `${company.shortName} | Federal Data, Architecture & AI Solutions`,
+  description: company.positioning,
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "GFB Advanced Technologies | Data Architecture & IT Consulting",
-    description:
-      "Enterprise-grade data solutions built for small businesses. Business automation, web development, data analytics, and IT support.",
+    title: `${company.shortName} | Federal Data, Architecture & AI Solutions`,
+    description: company.positioning,
     url: siteUrl,
-    siteName: "GFB Advanced Technologies",
+    siteName: company.shortName,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${company.shortName} — Federal Technology, Data, Architecture, AI`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GFB Advanced Technologies | Data Architecture & IT Consulting",
-    description:
-      "Enterprise-grade data solutions built for small businesses.",
+    title: `${company.shortName} | Federal Data, Architecture & AI Solutions`,
+    description: company.positioning,
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/favicon.svg",
@@ -55,8 +52,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${bebasNeue.variable}`}>
-      <body className="font-body antialiased noise-overlay">{children}</body>
+    <html lang="en" className={dmSans.variable}>
+      <body className="font-sans antialiased">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

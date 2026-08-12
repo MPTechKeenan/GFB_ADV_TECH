@@ -1,13 +1,16 @@
 # Changelog
 
-## 2026-03-12
+## 2026-03-12 — Rebrand to GFB Federal Solutions
 
-- **Redesign:** Single-page site for GFB Advanced Technologies LLC (Jacksonville, FL).
-- **Design:** Dark theme (#0a0a0f), electric cyan accent (#00d4ff), noise overlay, hexagonal motifs in Hero and Services.
-- **Sections:** Hero (Bebas Neue headline, CTA), Services (2x2 cards, hex icon containers), About (copy + stats), Contact (controlled form).
-- **Logo:** GFB logo component (full wordmark + icon-only) with light variant for nav; favicon.svg and OG image support.
-- **Typography:** Bebas Neue site-wide; DM Sans for Services/About/Contact section headings.
-- **Tech:** Next.js 14 (App Router), Tailwind CSS, Framer Motion (scroll reveals + hero animate on mount).
-- **Nav:** Sticky nav with smooth scroll and active-section highlighting; mobile hamburger menu.
-- **SEO:** Metadata and Open Graph with og-image.png for social sharing.
-- **Accessibility:** Focus-visible rings, sr-only labels on form, noise overlay z-index fixed so text stays visible.
+- Rebranded from GFB Advanced Technologies to **GFB Federal Solutions**.
+- Rebuilt site as multi-page: Home, Capabilities, About, Contact, Privacy.
+- New federal contractor positioning: data architecture, engineering, governance, AI, and DoD/federal mission support.
+- Design refresh: deep navy/charcoal palette, subtle blue accents, professional typography (DM Sans), minimal animation.
+- Added Company Information section with editable placeholders (UEI, CAGE, NAICS, SAM.gov, etc.) in `src/lib/company.ts`.
+- Contact form: Name, Organization, Email, Phone (optional), Message; display email placeholder.
+- Capabilities page with 12 detailed service areas; no fabricated certifications or past performance.
+
+## 2026-03-12 — Initial GFB Advanced Technologies site
+
+- Single-page Next.js 14 site with Hero, Services, About, Contact.
+- Dark theme, GFB logo component, Framer Motion scroll reveals, OG image support.
